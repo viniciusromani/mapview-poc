@@ -2,7 +2,7 @@ import SwiftUI
 
 public enum SignUpRouter: NavigationRouter {
     case name
-    case location
+    case location(username: String)
     
     public var transition: NavigationTransitionStyle {
         switch self {
@@ -15,7 +15,7 @@ public enum SignUpRouter: NavigationRouter {
     public func view() -> some View {
         switch self {
         case .name: SignUpNameStepView(viewModel: SignUpNameStepViewModel())
-        case .location: SignUpNameStepView(viewModel: SignUpNameStepViewModel())
+        case .location(let username): SignUpLocationStepView(viewModel: SignUpLocationStepViewModel(name: username))
         }
     }
 }

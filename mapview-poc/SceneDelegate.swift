@@ -1,15 +1,20 @@
 import SwiftUI
 
 final class SceneDelegate: NSObject, UIWindowSceneDelegate {
-    private let coordinator: Coordinator<SignUpRouter> = .init(startingRoute: .name)
+    private lazy var navigationController: UINavigationController = {
+        let navigation = UINavigationController()
+        navigation.navigationBar.barTintColor = .blue
+        return navigation
+    }()
+    private lazy var coordinator: Coordinator<SignUpRouter> = .init(navigationController: self.navigationController, startingRoute: .name)
     
     var window: UIWindow?
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
-        window = UIWindow(windowScene: windowScene)
-        window?.rootViewController = coordinator.navigationController
-        window?.makeKeyAndVisible()
-        coordinator.start()
+        self.window = UIWindow(windowScene: windowScene)
+        self.window?.rootViewController = self.coordinator.navigationController
+        self.window?.makeKeyAndVisible()
+        self.coordinator.start()
     }
 }

@@ -22,6 +22,10 @@
 		A1B264772917E76D00E302CF /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B264762917E76D00E302CF /* Coordinator.swift */; };
 		A1B2647D2917EF4400E302CF /* RoundedTextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2647C2917EF4400E302CF /* RoundedTextFieldStyle.swift */; };
 		A1B2647F2917F17300E302CF /* PrimaryButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2647E2917F17300E302CF /* PrimaryButtonStyle.swift */; };
+		A1B264822917FAE100E302CF /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B264812917FAE100E302CF /* String+Extensions.swift */; };
+		A1B264842917FB4400E302CF /* Bool+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B264832917FB4400E302CF /* Bool+Extensions.swift */; };
+		A1B264872917FE2900E302CF /* SignUpLocationStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B264862917FE2900E302CF /* SignUpLocationStepView.swift */; };
+		A1B264892917FEC400E302CF /* SignUpLocationStepViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B264882917FEC400E302CF /* SignUpLocationStepViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +64,10 @@
 		A1B264762917E76D00E302CF /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		A1B2647C2917EF4400E302CF /* RoundedTextFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedTextFieldStyle.swift; sourceTree = "<group>"; };
 		A1B2647E2917F17300E302CF /* PrimaryButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButtonStyle.swift; sourceTree = "<group>"; };
+		A1B264812917FAE100E302CF /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		A1B264832917FB4400E302CF /* Bool+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bool+Extensions.swift"; sourceTree = "<group>"; };
+		A1B264862917FE2900E302CF /* SignUpLocationStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpLocationStepView.swift; sourceTree = "<group>"; };
+		A1B264882917FEC400E302CF /* SignUpLocationStepViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpLocationStepViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +118,7 @@
 		A1B264202917C9EB00E302CF /* mapview-poc */ = {
 			isa = PBXGroup;
 			children = (
+				A1B264802917FACC00E302CF /* Extensions */,
 				A1B2646D2917E3FA00E302CF /* Navigation */,
 				A1B2644B2917CCFE00E302CF /* Presentation */,
 				A1B264252917C9EF00E302CF /* Assets.xcassets */,
@@ -157,6 +166,7 @@
 		A1B2644E2917CD4B00E302CF /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
+				A1B264852917FE1000E302CF /* LocationStep */,
 				A1B264512917D3F000E302CF /* NameStep */,
 			);
 			path = SignUp;
@@ -205,6 +215,24 @@
 				A1B2647E2917F17300E302CF /* PrimaryButtonStyle.swift */,
 			);
 			path = Styles;
+			sourceTree = "<group>";
+		};
+		A1B264802917FACC00E302CF /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A1B264812917FAE100E302CF /* String+Extensions.swift */,
+				A1B264832917FB4400E302CF /* Bool+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A1B264852917FE1000E302CF /* LocationStep */ = {
+			isa = PBXGroup;
+			children = (
+				A1B264862917FE2900E302CF /* SignUpLocationStepView.swift */,
+				A1B264882917FEC400E302CF /* SignUpLocationStepViewModel.swift */,
+			);
+			path = LocationStep;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -338,15 +366,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1B264702917E67400E302CF /* NavigationTransitionStyle.swift in Sources */,
+				A1B264892917FEC400E302CF /* SignUpLocationStepViewModel.swift in Sources */,
+				A1B264822917FAE100E302CF /* String+Extensions.swift in Sources */,
 				A1B264722917E6A900E302CF /* NavigationRouter.swift in Sources */,
 				A1B2646C2917E3E700E302CF /* SceneDelegate.swift in Sources */,
 				A1B2646A2917E3D900E302CF /* AppDelegate.swift in Sources */,
+				A1B264872917FE2900E302CF /* SignUpLocationStepView.swift in Sources */,
 				A1B264742917E6EE00E302CF /* SignUpRouter.swift in Sources */,
 				A1B264532917D40800E302CF /* SignUpNameStepView.swift in Sources */,
 				A1B2647F2917F17300E302CF /* PrimaryButtonStyle.swift in Sources */,
 				A1B264552917D42000E302CF /* SignUpNameStepViewModel.swift in Sources */,
 				A1B264772917E76D00E302CF /* Coordinator.swift in Sources */,
 				A1B2647D2917EF4400E302CF /* RoundedTextFieldStyle.swift in Sources */,
+				A1B264842917FB4400E302CF /* Bool+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

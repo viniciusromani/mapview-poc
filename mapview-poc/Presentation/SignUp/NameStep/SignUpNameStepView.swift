@@ -13,12 +13,16 @@ struct SignUpNameStepView: View {
             Text("What is your name?")
                 .font(.largeTitle)
                 .fontWeight(.bold)
-            TextField("Type something...", text: $viewModel.name)
+            TextField("Enter name here", text: $viewModel.name)
                 .textFieldStyle(RoundedTextFieldStyle())
                 .padding(.vertical, 16)
-            Button("Hit me!") {
-                print("Button Clicked")
-            }.buttonStyle(PrimaryButtonStyle())
+            Button("Next") {
+                self.coordinator.show(
+                    .location(username: self.viewModel.name)
+                )
+            }
+            .buttonStyle(PrimaryButtonStyle())
+            .disabled(viewModel.canSubmit.negated)
         }
         .padding()
         .navigationBarTitle("MapApp")
@@ -27,6 +31,12 @@ struct SignUpNameStepView: View {
 
 struct SignUpNameStepView_Previews: PreviewProvider {
     static var previews: some View {
-        SignUpNameStepView(viewModel: SignUpNameStepViewModel())
+        SignUpNameStepView(
+            viewModel: SignUpNameStepViewModel()
+        ).previewDisplayName("Empty")
+        
+        SignUpNameStepView(
+            viewModel: SignUpNameStepViewModel(name: "Vinicius Romani")
+        ).previewDisplayName("Filled")
     }
 }
