@@ -10,6 +10,6 @@ final class SignUpNameStepViewModel: ObservableObject {
 
 extension SignUpNameStepViewModel {
     var canSubmit: Bool {
-        name.isNotEmpty
+        self.name.isNotEmpty
     }
 }

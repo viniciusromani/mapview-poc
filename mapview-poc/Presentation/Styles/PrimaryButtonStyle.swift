@@ -6,7 +6,7 @@ protocol ButtonColors {
 }
 private struct EnabledColors: ButtonColors {
     var foreground = Color.white
-    var background = Color(red: 105 / 255, green: 56 / 255, blue: 219 / 255)
+    var background = Color.accentColor
 }
 private struct DisabledColors: ButtonColors {
     var foreground = Color(red: 199 / 255, green: 199 / 255, blue: 204 / 255)

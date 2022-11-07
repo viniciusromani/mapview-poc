@@ -14,8 +14,12 @@ public enum SignUpRouter: NavigationRouter {
     @ViewBuilder
     public func view() -> some View {
         switch self {
-        case .name: SignUpNameStepView(viewModel: SignUpNameStepViewModel())
-        case .location(let username): SignUpLocationStepView(viewModel: SignUpLocationStepViewModel(name: username))
+        case .name:
+            let viewModel = SignUpNameStepViewModel()
+            SignUpNameStepView(viewModel: viewModel)
+        case .location(let username):
+            let viewModel = SignUpLocationStepViewModel(name: username)
+            SignUpLocationStepView(viewModel: viewModel)
         }
     }
 }

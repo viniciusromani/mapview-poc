@@ -1,8 +1,11 @@
 import SwiftUI
 
 struct SignUpNameStepView: View {
-    @EnvironmentObject private var coordinator: Coordinator<SignUpRouter>
-    @ObservedObject private var viewModel: SignUpNameStepViewModel
+    @EnvironmentObject
+    private var coordinator: Coordinator<SignUpRouter>
+    
+    @ObservedObject
+    private var viewModel: SignUpNameStepViewModel
     
     init(viewModel: SignUpNameStepViewModel) {
         self.viewModel = viewModel
@@ -24,8 +27,9 @@ struct SignUpNameStepView: View {
             .buttonStyle(PrimaryButtonStyle())
             .disabled(viewModel.canSubmit.negated)
         }
+        .ignoresSafeArea()
         .padding()
-        .navigationBarTitle("MapApp")
+        .navigationBarTitle("MapApp", displayMode: .inline)
     }
 }
 

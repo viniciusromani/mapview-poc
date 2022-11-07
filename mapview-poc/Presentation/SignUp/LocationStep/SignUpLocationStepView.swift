@@ -1,8 +1,11 @@
 import SwiftUI
 
 struct SignUpLocationStepView: View {
-    @EnvironmentObject private var coordinator: Coordinator<SignUpRouter>
-    @ObservedObject private var viewModel: SignUpLocationStepViewModel
+    @EnvironmentObject
+    private var coordinator: Coordinator<SignUpRouter>
+    
+    @ObservedObject
+    private var viewModel: SignUpLocationStepViewModel
     
     init(viewModel: SignUpLocationStepViewModel) {
         self.viewModel = viewModel
@@ -13,11 +16,18 @@ struct SignUpLocationStepView: View {
             Text("Where are you from?")
                 .font(.largeTitle)
                 .fontWeight(.bold)
-            TextField("Enter location here", text: $viewModel.location)
+            TextField("Enter location here", text: $viewModel.typedLocation)
                 .textFieldStyle(RoundedTextFieldStyle())
                 .padding(.vertical, 16)
+            List(viewModel.locationsFound) { item in
+                VStack(alignment: .leading) {
+                    Text(item.title)
+                }
+            }
             Button("Done") {
-                print("Button Clicked")
+                Task {
+                    await self.viewModel.search()
+                }
             }
             .buttonStyle(PrimaryButtonStyle())
             .disabled(viewModel.canSubmit.negated)
@@ -38,7 +48,7 @@ struct SignUpLocationStepView_Previews: PreviewProvider {
         SignUpLocationStepView(
             viewModel: SignUpLocationStepViewModel(
                 name: "Vinicius Romani",
-                location: "Piracicaba, SP"
+                typedLocation: "Piracicaba, SP"
             )
         ).previewDisplayName("Filled")
     }
