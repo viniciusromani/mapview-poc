@@ -2,7 +2,7 @@ import SwiftUI
 
 struct SignUpNameStepView: View {
     @EnvironmentObject
-    private var coordinator: Coordinator<SignUpRouter>
+    private var coordinator: SignUpCoordinator
     
     @ObservedObject
     private var viewModel: SignUpNameStepViewModel
@@ -20,9 +20,7 @@ struct SignUpNameStepView: View {
                 .textFieldStyle(RoundedTextFieldStyle())
                 .padding(.vertical, 16)
             Button("Next") {
-                self.coordinator.show(
-                    .location(username: self.viewModel.name)
-                )
+                self.coordinator.didFinishName(self.viewModel.name)
             }
             .buttonStyle(PrimaryButtonStyle())
             .disabled(viewModel.canSubmit.negated)

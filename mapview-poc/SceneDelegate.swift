@@ -2,14 +2,10 @@ import SwiftUI
 
 final class SceneDelegate: NSObject, UIWindowSceneDelegate {
     private lazy var navigationController: UINavigationController = {
-        let navigation = UINavigationController()
-        let backButtonImage = UIImage(named: "ArrowLeft")
-        navigation.navigationBar.backIndicatorImage = backButtonImage
-        navigation.navigationBar.backIndicatorTransitionMaskImage = backButtonImage
-        navigation.navigationBar.titleTextAttributes = [.foregroundColor: UIColor(red: 105/255, green: 56/255, blue: 219/255, alpha: 1)]
-        return navigation
+        return customNavigationController()
     }()
-    private lazy var coordinator: Coordinator<SignUpRouter> = .init(navigationController: self.navigationController, startingRoute: .name)
+    private lazy var coordinator = AppCoordinator(window: self.window,
+                                                  navigationController: self.navigationController)
     
     var window: UIWindow?
     

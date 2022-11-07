@@ -2,7 +2,7 @@ import SwiftUI
 
 struct SignUpLocationStepView: View {
     @EnvironmentObject
-    private var coordinator: Coordinator<SignUpRouter>
+    private var coordinator: SignUpCoordinator
     
     @ObservedObject
     private var viewModel: SignUpLocationStepViewModel
@@ -19,14 +19,29 @@ struct SignUpLocationStepView: View {
             TextField("Enter location here", text: $viewModel.typedLocation)
                 .textFieldStyle(RoundedTextFieldStyle())
                 .padding(.vertical, 16)
-            List(viewModel.locationsFound) { item in
-                VStack(alignment: .leading) {
-                    Text(item.title)
+            if viewModel.state == .loaded {
+                List(viewModel.locationsFound,
+                     id: \.self,
+                     selection: $viewModel.selectedLocation) { location in
+                    Section(header: Text("Locations Found")) {
+                        LocationRowView(title: location)
+                    }
                 }
             }
-            Button("Done") {
+            Button {
                 Task {
                     await self.viewModel.search()
+                }
+            } label: {
+                ZStack {
+                    let isLoading = self.viewModel.state.isLoading
+                    Text("Search")
+                        .opacity(isLoading ? 0: 1)
+                    
+                    if isLoading {
+                        ProgressView()
+                            .tint(.white)
+                    }
                 }
             }
             .buttonStyle(PrimaryButtonStyle())
