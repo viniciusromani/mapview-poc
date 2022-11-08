@@ -5,9 +5,9 @@ final class SignUpLocationStepViewModel: ObservableObject {
     private let name: String
     @Published var typedLocation: String
     @Published var locationsFound: [String] = []
-    @State var selectedLocation: String?
     @Published var state: LoadableState
     @Injected private var getLocationsUseCase: GetLocationsUseCase
+    @Injected private var storeUserUseCase: StoreUserCoreDataUseCase
     
     private(set) var subscriptions = Set<AnyCancellable>()
     
@@ -28,15 +28,15 @@ final class SignUpLocationStepViewModel: ObservableObject {
         await self.getLocationsUseCase.execute(with: params)
             .receive(on: RunLoop.main)
             .sink(receiveCompletion: { _ in }, receiveValue: { [weak self] locations in
-                print("recebemos a localização")
                 self?.state = .loaded
                 self?.locationsFound = locations.map { $0.title }
+                
+                let location = locations.first!
+                let user = UserModel(name: self!.name, location: location)
+                let params = StoreUserCoreDataUseCase.Params(user: user)
+                self?.storeUserUseCase.execute(with: params).sink(receiveCompletion: { _ in }, receiveValue: { _ in }).store(in: &self!.subscriptions)
             })
             .store(in: &subscriptions)
-    }
-    
-    func store() {
-        
     }
 }
 

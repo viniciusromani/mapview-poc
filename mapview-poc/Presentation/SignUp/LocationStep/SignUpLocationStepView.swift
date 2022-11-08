@@ -7,6 +7,12 @@ struct SignUpLocationStepView: View {
     @ObservedObject
     private var viewModel: SignUpLocationStepViewModel
     
+    @State var selectedLocation: String? {
+        didSet {
+            print("acabou de setar", selectedLocation)
+        }
+    }
+    
     init(viewModel: SignUpLocationStepViewModel) {
         self.viewModel = viewModel
     }
@@ -22,9 +28,12 @@ struct SignUpLocationStepView: View {
             if viewModel.state == .loaded {
                 List(viewModel.locationsFound,
                      id: \.self,
-                     selection: $viewModel.selectedLocation) { location in
+                     selection: $selectedLocation) { location in
                     Section(header: Text("Locations Found")) {
                         LocationRowView(title: location)
+                            .onTapGesture {
+                                self.coordinator.didFinishSignUp()
+                            }
                     }
                 }
             }

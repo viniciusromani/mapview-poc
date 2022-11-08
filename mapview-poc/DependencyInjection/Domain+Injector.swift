@@ -1,4 +1,10 @@
 struct DomainInjector {
     @Provider
-    var localLocationDataSource: LocationDataSource = LocalLocationDataSource()
+    var getLocationsUseCase = GetLocationsUseCase()
+    
+    @Provider
+    var storeUserUseCase = StoreUserCoreDataUseCase()
+    
+    @Provider
+    var getUserUseCase = GetUserCoreDataUseCase()
 }

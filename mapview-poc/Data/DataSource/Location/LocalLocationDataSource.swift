@@ -1,6 +1,9 @@
 import Combine
 import MapKit
 
+/**
+TODO: Error treatment must be implemented
+*/
 class LocalLocationDataSource: LocationDataSource {
     func search(_ text: String) async -> Future<[MKMapItem], Error> {
         let request = MKLocalSearch.Request()
