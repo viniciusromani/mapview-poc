@@ -1,4 +1,7 @@
+/**
+ Nothing to inject yet
+ */
+
 struct PresentationInjector {
-    @Provider
-    var getLocationsUseCase = GetLocationsUseCase() as GetLocationsUseCase
+    
 }

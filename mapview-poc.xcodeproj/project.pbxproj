@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A179B38E291A78CA001C8877 /* MapApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A179B38B291A78CA001C8877 /* MapApp.xcdatamodeld */; };
 		A1B264262917C9EF00E302CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1B264252917C9EF00E302CF /* Assets.xcassets */; };
 		A1B264292917C9EF00E302CF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1B264282917C9EF00E302CF /* Preview Assets.xcassets */; };
 		A1B264332917C9EF00E302CF /* mapview_pocTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B264322917C9EF00E302CF /* mapview_pocTests.swift */; };
@@ -46,6 +47,12 @@
 		A1D098432919128F001FDA44 /* LoadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D098422919128F001FDA44 /* LoadableView.swift */; };
 		A1D0984529191540001FDA44 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D0984429191540001FDA44 /* Array+Extensions.swift */; };
 		A1D0984729192C3D001FDA44 /* LocationRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D0984629192C3D001FDA44 /* LocationRowView.swift */; };
+		A1D098502919729E001FDA44 /* UserDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D0984F2919729D001FDA44 /* UserDataSource.swift */; };
+		A1D09852291972B5001FDA44 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D09851291972B5001FDA44 /* UserModel.swift */; };
+		A1D098572919764F001FDA44 /* CoreDataUserDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D098562919764F001FDA44 /* CoreDataUserDataSource.swift */; };
+		A1D0985A29197684001FDA44 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D0985929197684001FDA44 /* CoreDataManager.swift */; };
+		A1D09874291A7239001FDA44 /* StoreUserCoreDataUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D09873291A7239001FDA44 /* StoreUserCoreDataUseCase.swift */; };
+		A1D09876291A729E001FDA44 /* GetUserCoreDataUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D09875291A729E001FDA44 /* GetUserCoreDataUseCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +73,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A179B38C291A78CA001C8877 /* MapApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MapApp.xcdatamodel; sourceTree = "<group>"; };
+		A179B38D291A78CA001C8877 /* User.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = User.xcdatamodel; sourceTree = "<group>"; };
 		A1B2641E2917C9EB00E302CF /* mapview-poc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mapview-poc.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1B264252917C9EF00E302CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A1B264282917C9EF00E302CF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -108,6 +117,12 @@
 		A1D098422919128F001FDA44 /* LoadableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadableView.swift; sourceTree = "<group>"; };
 		A1D0984429191540001FDA44 /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
 		A1D0984629192C3D001FDA44 /* LocationRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationRowView.swift; sourceTree = "<group>"; };
+		A1D0984F2919729D001FDA44 /* UserDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataSource.swift; sourceTree = "<group>"; };
+		A1D09851291972B5001FDA44 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		A1D098562919764F001FDA44 /* CoreDataUserDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataUserDataSource.swift; sourceTree = "<group>"; };
+		A1D0985929197684001FDA44 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		A1D09873291A7239001FDA44 /* StoreUserCoreDataUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreUserCoreDataUseCase.swift; sourceTree = "<group>"; };
+		A1D09875291A729E001FDA44 /* GetUserCoreDataUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserCoreDataUseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +183,7 @@
 				A1B264272917C9EF00E302CF /* Preview Content */,
 				A1B264692917E3D900E302CF /* AppDelegate.swift */,
 				A1B2646B2917E3E700E302CF /* SceneDelegate.swift */,
+				A179B38B291A78CA001C8877 /* MapApp.xcdatamodeld */,
 			);
 			path = "mapview-poc";
 			sourceTree = "<group>";
@@ -279,6 +295,7 @@
 		A1D0980A29186954001FDA44 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				A1D0985829197676001FDA44 /* Manager */,
 				A1D0980B29186969001FDA44 /* DataSource */,
 			);
 			path = Data;
@@ -287,6 +304,7 @@
 		A1D0980B29186969001FDA44 /* DataSource */ = {
 			isa = PBXGroup;
 			children = (
+				A1D0984E2919728C001FDA44 /* User */,
 				A1D0980E29186CFF001FDA44 /* Location */,
 			);
 			path = DataSource;
@@ -306,6 +324,8 @@
 			children = (
 				A1D0981129186F8A001FDA44 /* UseCase.swift */,
 				A1D0981329187176001FDA44 /* GetLocationsUseCase.swift */,
+				A1D09873291A7239001FDA44 /* StoreUserCoreDataUseCase.swift */,
+				A1D09875291A729E001FDA44 /* GetUserCoreDataUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -314,6 +334,7 @@
 			isa = PBXGroup;
 			children = (
 				A1D0981929188868001FDA44 /* LocationModel.swift */,
+				A1D09851291972B5001FDA44 /* UserModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -373,6 +394,23 @@
 				A1D098422919128F001FDA44 /* LoadableView.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		A1D0984E2919728C001FDA44 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				A1D0984F2919729D001FDA44 /* UserDataSource.swift */,
+				A1D098562919764F001FDA44 /* CoreDataUserDataSource.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		A1D0985829197676001FDA44 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				A1D0985929197684001FDA44 /* CoreDataManager.swift */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -514,15 +552,20 @@
 				A1B264822917FAE100E302CF /* String+Extensions.swift in Sources */,
 				A1D0983F2918FEAB001FDA44 /* CustomNavigationController.swift in Sources */,
 				A1D098322918A582001FDA44 /* MapTabViewModel.swift in Sources */,
+				A1D09874291A7239001FDA44 /* StoreUserCoreDataUseCase.swift in Sources */,
 				A1D0982729189FF7001FDA44 /* AppCoordinator.swift in Sources */,
 				A1D098292918A02B001FDA44 /* SignUpCoordinator.swift in Sources */,
 				A1B2646C2917E3E700E302CF /* SceneDelegate.swift in Sources */,
 				A1B2646A2917E3D900E302CF /* AppDelegate.swift in Sources */,
 				A1B264872917FE2900E302CF /* SignUpLocationStepView.swift in Sources */,
 				A1D0982B2918A473001FDA44 /* TabCoordinator.swift in Sources */,
+				A1D09876291A729E001FDA44 /* GetUserCoreDataUseCase.swift in Sources */,
+				A1D098572919764F001FDA44 /* CoreDataUserDataSource.swift in Sources */,
+				A179B38E291A78CA001C8877 /* MapApp.xcdatamodeld in Sources */,
 				A1D098212918921A001FDA44 /* Domain+Injector.swift in Sources */,
 				A1D098382918F8E9001FDA44 /* ProfileTabView.swift in Sources */,
 				A1D09816291882D7001FDA44 /* Future+Extensions.swift in Sources */,
+				A1D098502919729E001FDA44 /* UserDataSource.swift in Sources */,
 				A1D0983A2918F96B001FDA44 /* ProfileTabViewModel.swift in Sources */,
 				A1D0980D29186996001FDA44 /* LocationDataSource.swift in Sources */,
 				A1D098302918A573001FDA44 /* MapTabView.swift in Sources */,
@@ -535,9 +578,11 @@
 				A1D09823291894B0001FDA44 /* Presentation+Injector.swift in Sources */,
 				A1D0981429187176001FDA44 /* GetLocationsUseCase.swift in Sources */,
 				A1D0981229186F8A001FDA44 /* UseCase.swift in Sources */,
+				A1D0985A29197684001FDA44 /* CoreDataManager.swift in Sources */,
 				A1D098432919128F001FDA44 /* LoadableView.swift in Sources */,
 				A1B2647D2917EF4400E302CF /* RoundedTextFieldStyle.swift in Sources */,
 				A1D0981A29188868001FDA44 /* LocationModel.swift in Sources */,
+				A1D09852291972B5001FDA44 /* UserModel.swift in Sources */,
 				A1B264842917FB4400E302CF /* Bool+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -857,6 +902,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A179B38B291A78CA001C8877 /* MapApp.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A179B38C291A78CA001C8877 /* MapApp.xcdatamodel */,
+				A179B38D291A78CA001C8877 /* User.xcdatamodel */,
+			);
+			currentVersion = A179B38C291A78CA001C8877 /* MapApp.xcdatamodel */;
+			path = MapApp.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = A1B264162917C9EB00E302CF /* Project object */;
 }
