@@ -16,9 +16,11 @@ class CoreDataManager: ObservableObject {
         return container
     }()
     
-    func fetch<T: NSManagedObject>() -> [T]? {
-        let request: NSFetchRequest<T> = NSFetchRequest<T>(entityName: String(describing: T.self))
-        
+    lazy var context: NSManagedObjectContext = {
+        return container.viewContext
+    }()
+    
+    func fetch<T: NSManagedObject>(_ request: NSFetchRequest<T>) -> [T]? {
         do {
             let fetched = try container.viewContext.fetch(request)
             return fetched
@@ -28,17 +30,10 @@ class CoreDataManager: ObservableObject {
         }
     }
     
-    func save<T: NSManagedObject>(_ t: T) {
-        let entity = T(context: container.viewContext)
-        self.store()
-    }
-    
-    private func store() {
-        let context = container.viewContext
-        
-        if context.hasChanges {
+    func save() {
+        if self.context.hasChanges {
             do {
-                try context.save()
+                try self.context.save()
             } catch {
                 let err = error as NSError
                 fatalError("Unresolved error \(err.localizedDescription)")

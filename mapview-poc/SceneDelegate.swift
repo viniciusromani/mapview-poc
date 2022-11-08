@@ -10,6 +10,7 @@ final class SceneDelegate: NSObject, UIWindowSceneDelegate {
     var window: UIWindow?
     
     private func injectDependencies() {
+        _ = DataInjector()
         _ = DomainInjector()
         _ = PresentationInjector()
     }

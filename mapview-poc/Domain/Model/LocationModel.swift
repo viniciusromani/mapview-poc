@@ -1,6 +1,7 @@
 import MapKit
 
 struct LocationModel {
+    private(set) var id = UUID()
     private(set) var title: String
     private(set) var latitude: Double
     private(set) var longitude: Double
@@ -31,3 +32,5 @@ struct LocationModel {
         self.longitude = managed.longitude
     }
 }
+
+extension LocationModel: Identifiable { }

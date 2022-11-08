@@ -4,7 +4,7 @@ class GetUserCoreDataUseCase: UseCase {
     @Injected
     private var dataSource: UserDataSource
     
-    func execute(with params: Void? = nil) async -> AnyPublisher<UserModel, Error> {
+    func execute(with params: Void? = nil) -> AnyPublisher<UserModel?, Error> {
         return self.dataSource.get()
             .eraseToAnyPublisher()
     }
