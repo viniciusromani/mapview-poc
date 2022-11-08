@@ -20,9 +20,7 @@ struct SignUpNameStepView: View {
                 .textFieldStyle(RoundedTextFieldStyle())
                 .padding(.vertical, 16)
             Button("Next") {
-//                self.coordinator.didFinishName(self.viewModel.name)
-                let user = User()
-                CoreDataManager.shared.save(user)
+                self.coordinator.didFinishName(self.viewModel.name)
             }
             .buttonStyle(PrimaryButtonStyle())
             .disabled(viewModel.canSubmit.negated)

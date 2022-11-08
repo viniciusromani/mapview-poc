@@ -30,11 +30,6 @@ final class SignUpLocationStepViewModel: ObservableObject {
             .sink(receiveCompletion: { _ in }, receiveValue: { [weak self] locations in
                 self?.state = .loaded
                 self?.locationsFound = locations.map { $0.title }
-                
-                let location = locations.first!
-                let user = UserModel(name: self!.name, location: location)
-                let params = StoreUserCoreDataUseCase.Params(user: user)
-                self?.storeUserUseCase.execute(with: params).sink(receiveCompletion: { _ in }, receiveValue: { _ in }).store(in: &self!.subscriptions)
             })
             .store(in: &subscriptions)
     }

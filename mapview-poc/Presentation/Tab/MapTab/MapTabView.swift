@@ -2,22 +2,21 @@ import MapKit
 import SwiftUI
 
 struct MapTabView: View {
-    @State private var region = MKCoordinateRegion(
-        center:
-            CLLocationCoordinate2D(
-                latitude: 51.5,
-                longitude: -0.12
-            ),
-        span:
-            MKCoordinateSpan(
-                latitudeDelta: 0.2,
-                longitudeDelta: 0.2
-            )
-    )
+    @StateObject
+    private var viewModel = MapTabViewModel()
     
     var body: some View {
-        Map(coordinateRegion: self.$region)
-            .navigationBarTitle("MapApp")
+        Map(coordinateRegion: self.$viewModel.region,
+            annotationItems: [viewModel.storedLocation]) { place in
+            MapMarker(
+                coordinate: CLLocationCoordinate2D(
+                    latitude: place.latitude,
+                    longitude: place.longitude
+                ),
+                tint: .accentColor
+            )
+        }
+        .onAppear { self.viewModel.getUserLocation() }
     }
 }
 

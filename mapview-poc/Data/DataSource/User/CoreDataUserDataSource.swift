@@ -9,26 +9,18 @@ class CoreDataUserDataSource: UserDataSource {
     
     func store(_ user: UserModel) -> Future<Bool, Error> {
         return Future { [weak self] in
-            let managedUser = User()
-            managedUser.name = user.name
-            let location = Location()
-            location.title = user.location.title
-            location.latitude = user.location.latitude
-            location.longitude = user.location.longitude
-            managedUser.location = location
-            self?.manager.save(managedUser)
+            self?.manager.save()
             return true
         }
     }
     
-    func get() -> Future<UserModel, Error> {
+    func get() -> Future<UserModel?, Error> {
         return Future { [weak self] in
-            guard let managedUser = self?.manager.fetch()?.first as? User,
-                    let location = managedUser.location else {
-                print("Could not get User from CoreData")
-                return
+            let request = User.fetchRequest()
+            guard let managed = self?.manager.fetch(request)?.first as? User else {
+                return nil
             }
-            let model = UserModel(managed: managedUser)
+            let model = UserModel(managed: managed)
             return model
         }
     }

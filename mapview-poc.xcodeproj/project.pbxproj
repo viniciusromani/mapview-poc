@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		A179B38E291A78CA001C8877 /* MapApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A179B38B291A78CA001C8877 /* MapApp.xcdatamodeld */; };
+		A179B3A1291A92F3001C8877 /* Location+Properties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A179B39D291A92F3001C8877 /* Location+Properties.swift */; };
+		A179B3A3291A92F3001C8877 /* User+Properties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A179B39F291A92F3001C8877 /* User+Properties.swift */; };
 		A1B264262917C9EF00E302CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1B264252917C9EF00E302CF /* Assets.xcassets */; };
 		A1B264292917C9EF00E302CF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1B264282917C9EF00E302CF /* Preview Assets.xcassets */; };
 		A1B264332917C9EF00E302CF /* mapview_pocTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B264322917C9EF00E302CF /* mapview_pocTests.swift */; };
@@ -75,6 +77,8 @@
 /* Begin PBXFileReference section */
 		A179B38C291A78CA001C8877 /* MapApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MapApp.xcdatamodel; sourceTree = "<group>"; };
 		A179B38D291A78CA001C8877 /* User.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = User.xcdatamodel; sourceTree = "<group>"; };
+		A179B39D291A92F3001C8877 /* Location+Properties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Location+Properties.swift"; sourceTree = "<group>"; };
+		A179B39F291A92F3001C8877 /* User+Properties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+Properties.swift"; sourceTree = "<group>"; };
 		A1B2641E2917C9EB00E302CF /* mapview-poc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mapview-poc.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1B264252917C9EF00E302CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A1B264282917C9EF00E302CF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -150,6 +154,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A179B3A4291A92FD001C8877 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				A179B39D291A92F3001C8877 /* Location+Properties.swift */,
+				A179B39F291A92F3001C8877 /* User+Properties.swift */,
+				A1D0985929197684001FDA44 /* CoreDataManager.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		A1B264152917C9EB00E302CF = {
 			isa = PBXGroup;
 			children = (
@@ -295,7 +309,7 @@
 		A1D0980A29186954001FDA44 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				A1D0985829197676001FDA44 /* Manager */,
+				A179B3A4291A92FD001C8877 /* CoreData */,
 				A1D0980B29186969001FDA44 /* DataSource */,
 			);
 			path = Data;
@@ -403,14 +417,6 @@
 				A1D098562919764F001FDA44 /* CoreDataUserDataSource.swift */,
 			);
 			path = User;
-			sourceTree = "<group>";
-		};
-		A1D0985829197676001FDA44 /* Manager */ = {
-			isa = PBXGroup;
-			children = (
-				A1D0985929197684001FDA44 /* CoreDataManager.swift */,
-			);
-			path = Manager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -550,7 +556,9 @@
 				A1D0984729192C3D001FDA44 /* LocationRowView.swift in Sources */,
 				A1B264892917FEC400E302CF /* SignUpLocationStepViewModel.swift in Sources */,
 				A1B264822917FAE100E302CF /* String+Extensions.swift in Sources */,
+				A179B3A3291A92F3001C8877 /* User+Properties.swift in Sources */,
 				A1D0983F2918FEAB001FDA44 /* CustomNavigationController.swift in Sources */,
+				A179B3A1291A92F3001C8877 /* Location+Properties.swift in Sources */,
 				A1D098322918A582001FDA44 /* MapTabViewModel.swift in Sources */,
 				A1D09874291A7239001FDA44 /* StoreUserCoreDataUseCase.swift in Sources */,
 				A1D0982729189FF7001FDA44 /* AppCoordinator.swift in Sources */,
