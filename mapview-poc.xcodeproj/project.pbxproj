@@ -59,6 +59,10 @@
 		A1D09876291A729E001FDA44 /* GetUserCoreDataUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D09875291A729E001FDA44 /* GetUserCoreDataUseCase.swift */; };
 		A1E7CAC8291C0D3F00347E05 /* Binding+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E7CAC7291C0D3F00347E05 /* Binding+Extensions.swift */; };
 		A1E7CACA291C41F100347E05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1E7CAC9291C41F100347E05 /* LaunchScreen.storyboard */; };
+		A1E7CACC291C449100347E05 /* SplashCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E7CACB291C449100347E05 /* SplashCoordinator.swift */; };
+		A1E7CACF291C459000347E05 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E7CACE291C459000347E05 /* SplashView.swift */; };
+		A1E7CAD1291C459D00347E05 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E7CAD0291C459D00347E05 /* SplashViewModel.swift */; };
+		A1E7CAD3291C490700347E05 /* AnyPublisher+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E7CAD2291C490700347E05 /* AnyPublisher+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -134,6 +138,10 @@
 		A1D09875291A729E001FDA44 /* GetUserCoreDataUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserCoreDataUseCase.swift; sourceTree = "<group>"; };
 		A1E7CAC7291C0D3F00347E05 /* Binding+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding+Extensions.swift"; sourceTree = "<group>"; };
 		A1E7CAC9291C41F100347E05 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A1E7CACB291C449100347E05 /* SplashCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashCoordinator.swift; sourceTree = "<group>"; };
+		A1E7CACE291C459000347E05 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		A1E7CAD0291C459D00347E05 /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
+		A1E7CAD2291C490700347E05 /* AnyPublisher+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AnyPublisher+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,8 +248,9 @@
 			children = (
 				A1D0983D2918FE9A001FDA44 /* Components */,
 				A1B2647B2917EEB800E302CF /* Styles */,
-				A1D0982D2918A548001FDA44 /* Tab */,
+				A1E7CACD291C457500347E05 /* Splash */,
 				A1B2644E2917CD4B00E302CF /* SignUp */,
+				A1D0982D2918A548001FDA44 /* Tab */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -271,6 +280,7 @@
 				A1D0982629189FF7001FDA44 /* AppCoordinator.swift */,
 				A1D098282918A02B001FDA44 /* SignUpCoordinator.swift */,
 				A1D0982A2918A473001FDA44 /* TabCoordinator.swift */,
+				A1E7CACB291C449100347E05 /* SplashCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -293,6 +303,7 @@
 				A1D09815291882D6001FDA44 /* Future+Extensions.swift */,
 				A1D0984429191540001FDA44 /* Array+Extensions.swift */,
 				A1E7CAC7291C0D3F00347E05 /* Binding+Extensions.swift */,
+				A1E7CAD2291C490700347E05 /* AnyPublisher+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -428,6 +439,15 @@
 				A1D098562919764F001FDA44 /* CoreDataUserDataSource.swift */,
 			);
 			path = User;
+			sourceTree = "<group>";
+		};
+		A1E7CACD291C457500347E05 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				A1E7CACE291C459000347E05 /* SplashView.swift */,
+				A1E7CAD0291C459D00347E05 /* SplashViewModel.swift */,
+			);
+			path = Splash;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -578,6 +598,8 @@
 				A1D09874291A7239001FDA44 /* StoreUserCoreDataUseCase.swift in Sources */,
 				A1D0982729189FF7001FDA44 /* AppCoordinator.swift in Sources */,
 				A1D098292918A02B001FDA44 /* SignUpCoordinator.swift in Sources */,
+				A1E7CACF291C459000347E05 /* SplashView.swift in Sources */,
+				A1E7CACC291C449100347E05 /* SplashCoordinator.swift in Sources */,
 				A1B2646C2917E3E700E302CF /* SceneDelegate.swift in Sources */,
 				A1B2646A2917E3D900E302CF /* AppDelegate.swift in Sources */,
 				A1B264872917FE2900E302CF /* SignUpLocationStepView.swift in Sources */,
@@ -604,6 +626,8 @@
 				A1D0985A29197684001FDA44 /* CoreDataManager.swift in Sources */,
 				A1D098432919128F001FDA44 /* LoadableView.swift in Sources */,
 				A1B2647D2917EF4400E302CF /* RoundedTextFieldStyle.swift in Sources */,
+				A1E7CAD3291C490700347E05 /* AnyPublisher+Extensions.swift in Sources */,
+				A1E7CAD1291C459D00347E05 /* SplashViewModel.swift in Sources */,
 				A1D0981A29188868001FDA44 /* LocationModel.swift in Sources */,
 				A1D09852291972B5001FDA44 /* UserModel.swift in Sources */,
 				A1B264842917FB4400E302CF /* Bool+Extensions.swift in Sources */,

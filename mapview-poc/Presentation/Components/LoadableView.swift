@@ -12,7 +12,7 @@ enum LoadableState {
 struct LoadableView: View {
     var body: some View {
         ZStack {
-            Color(UIColor.systemGroupedBackground)
+            Color(UIColor.clear)
             ProgressView()
         }
     }

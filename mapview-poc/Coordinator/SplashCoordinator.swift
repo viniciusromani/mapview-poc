@@ -1,6 +1,6 @@
 import SwiftUI
 
-class TabCoordinator: Coordinator, ObservableObject {
+class SplashCoordinator: Coordinator, ObservableObject {
     var childCoordinators: [Coordinator]
     var navigationController: UINavigationController
     private let parentCoordinator: Coordinator
@@ -13,17 +13,17 @@ class TabCoordinator: Coordinator, ObservableObject {
     }
     
     func start() {
-        let view = MainTabView()
+        let view = SplashView()
         let viewWithCoordinator = view.environmentObject(self)
         let hosting = UIHostingController(rootView: viewWithCoordinator)
         self.navigationController.pushViewController(hosting, animated: false)
     }
     
-    func logout() {
+    func didFinishSplash(user: UserModel?) {
         guard let appCoordinator = self.parentCoordinator as? AppCoordinator else {
             fatalError("Parent Coordinator must be AppCoordinator")
         }
         appCoordinator.childDidFinish(self)
-        appCoordinator.didLogout()
+        appCoordinator.didFinishSplash(user: user)
     }
 }
