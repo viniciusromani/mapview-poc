@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A179B38E291A78CA001C8877 /* MapApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A179B38B291A78CA001C8877 /* MapApp.xcdatamodeld */; };
 		A179B3A1291A92F3001C8877 /* Location+Properties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A179B39D291A92F3001C8877 /* Location+Properties.swift */; };
 		A179B3A3291A92F3001C8877 /* User+Properties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A179B39F291A92F3001C8877 /* User+Properties.swift */; };
 		A179B3AA291BB2E2001C8877 /* DestructiveButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A179B3A9291BB2E2001C8877 /* DestructiveButtonStyle.swift */; };
 		A179B3AC291BDF11001C8877 /* DeleteUserCoreDataUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A179B3AB291BDF11001C8877 /* DeleteUserCoreDataUseCase.swift */; };
+		A179B3AF291BE204001C8877 /* MapApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A179B3AD291BE204001C8877 /* MapApp.xcdatamodeld */; };
 		A1B264262917C9EF00E302CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1B264252917C9EF00E302CF /* Assets.xcassets */; };
 		A1B264292917C9EF00E302CF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1B264282917C9EF00E302CF /* Preview Assets.xcassets */; };
 		A1B264332917C9EF00E302CF /* mapview_pocTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B264322917C9EF00E302CF /* mapview_pocTests.swift */; };
@@ -77,12 +77,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		A179B38C291A78CA001C8877 /* MapApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MapApp.xcdatamodel; sourceTree = "<group>"; };
-		A179B38D291A78CA001C8877 /* User.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = User.xcdatamodel; sourceTree = "<group>"; };
 		A179B39D291A92F3001C8877 /* Location+Properties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Location+Properties.swift"; sourceTree = "<group>"; };
 		A179B39F291A92F3001C8877 /* User+Properties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+Properties.swift"; sourceTree = "<group>"; };
 		A179B3A9291BB2E2001C8877 /* DestructiveButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestructiveButtonStyle.swift; sourceTree = "<group>"; };
 		A179B3AB291BDF11001C8877 /* DeleteUserCoreDataUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteUserCoreDataUseCase.swift; sourceTree = "<group>"; };
+		A179B3AE291BE204001C8877 /* MapApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MapApp.xcdatamodel; sourceTree = "<group>"; };
 		A1B2641E2917C9EB00E302CF /* mapview-poc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mapview-poc.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1B264252917C9EF00E302CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A1B264282917C9EF00E302CF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -201,7 +200,7 @@
 				A1B264272917C9EF00E302CF /* Preview Content */,
 				A1B264692917E3D900E302CF /* AppDelegate.swift */,
 				A1B2646B2917E3E700E302CF /* SceneDelegate.swift */,
-				A179B38B291A78CA001C8877 /* MapApp.xcdatamodeld */,
+				A179B3AD291BE204001C8877 /* MapApp.xcdatamodeld */,
 			);
 			path = "mapview-poc";
 			sourceTree = "<group>";
@@ -555,6 +554,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A179B3AF291BE204001C8877 /* MapApp.xcdatamodeld in Sources */,
 				A1D0981029186D0F001FDA44 /* LocalLocationDataSource.swift in Sources */,
 				A1D0982529189FC2001FDA44 /* Coordinator.swift in Sources */,
 				A179B3AA291BB2E2001C8877 /* DestructiveButtonStyle.swift in Sources */,
@@ -576,7 +576,6 @@
 				A1D0982B2918A473001FDA44 /* TabCoordinator.swift in Sources */,
 				A1D09876291A729E001FDA44 /* GetUserCoreDataUseCase.swift in Sources */,
 				A1D098572919764F001FDA44 /* CoreDataUserDataSource.swift in Sources */,
-				A179B38E291A78CA001C8877 /* MapApp.xcdatamodeld in Sources */,
 				A1D098212918921A001FDA44 /* Domain+Injector.swift in Sources */,
 				A1D098382918F8E9001FDA44 /* ProfileTabView.swift in Sources */,
 				A1D09816291882D7001FDA44 /* Future+Extensions.swift in Sources */,
@@ -920,13 +919,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		A179B38B291A78CA001C8877 /* MapApp.xcdatamodeld */ = {
+		A179B3AD291BE204001C8877 /* MapApp.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				A179B38C291A78CA001C8877 /* MapApp.xcdatamodel */,
-				A179B38D291A78CA001C8877 /* User.xcdatamodel */,
+				A179B3AE291BE204001C8877 /* MapApp.xcdatamodel */,
 			);
-			currentVersion = A179B38C291A78CA001C8877 /* MapApp.xcdatamodel */;
+			currentVersion = A179B3AE291BE204001C8877 /* MapApp.xcdatamodel */;
 			path = MapApp.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

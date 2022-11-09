@@ -1,3 +1,4 @@
+import Combine
 import SwiftUI
 
 class AppCoordinator: Coordinator {
@@ -5,6 +6,9 @@ class AppCoordinator: Coordinator {
     var navigationController: UINavigationController
     
     weak var window: UIWindow?
+    
+    @Injected private var getUserUseCase: GetUserCoreDataUseCase
+    private var subscriptions = Set<AnyCancellable>()
     
     init(window: UIWindow?,
          navigationController: UINavigationController) {
@@ -14,9 +18,19 @@ class AppCoordinator: Coordinator {
     }
     
     func start() {
-        let child = SignUpCoordinator(parentCoordinator: self,
-                                      navigationController: self.navigationController)
-        self.startChild(child)
+        self.getUserUseCase.execute()
+            .receive(on: RunLoop.main)
+            .replaceError(with: nil)
+            .sink(receiveValue: { user in
+                let child: Coordinator =
+                    user == nil ?
+                        SignUpCoordinator(parentCoordinator: self,
+                                          navigationController: self.navigationController):
+                        TabCoordinator(parentCoordinator: self,
+                                       navigationController: self.navigationController)
+                self.startChild(child)
+            })
+            .store(in: &subscriptions)
     }
     
     func didFinishSignUp() {

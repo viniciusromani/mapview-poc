@@ -7,4 +7,7 @@ struct DomainInjector {
     
     @Provider
     var getUserUseCase = GetUserCoreDataUseCase()
+    
+    @Provider
+    var deleteUserUseCase = DeleteUserCoreDataUseCase()
 }
