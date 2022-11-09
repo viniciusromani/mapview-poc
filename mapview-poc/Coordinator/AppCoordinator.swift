@@ -29,4 +29,15 @@ class AppCoordinator: Coordinator {
             self.window?.rootViewController = self.navigationController
         }
     }
+    
+    func didLogOut() {
+        UIView.transition(with: self.window!, duration: 0.5, options: [.transitionFlipFromLeft]) {
+            self.navigationController = customNavigationController()
+            
+            let child = SignUpCoordinator(parentCoordinator: self,
+                                          navigationController: self.navigationController)
+            self.startChild(child)
+            self.window?.rootViewController = self.navigationController
+        }
+    }
 }

@@ -22,6 +22,7 @@ struct MainTabView: View {
                 self.viewModel.handleSwipe(value.translation.width)
             }
         )
+        .navigationBarTitle("MapApp")
     }
 }
 

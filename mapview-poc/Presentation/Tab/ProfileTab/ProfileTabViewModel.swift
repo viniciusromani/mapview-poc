@@ -1,25 +1,11 @@
 import Combine
 import SwiftUI
 
-struct UserSceneModel {
-    private(set) var name: String
-    private(set) var location: String
-    
-    init() {
-        self.name = ""
-        self.location = ""
-    }
-    
-    init(model: UserModel) {
-        self.name = model.name
-        self.location = model.location.title
-    }
-}
-
 final class ProfileTabViewModel: ObservableObject {
-    @Published var user: UserSceneModel? = UserSceneModel()
+    @Published var user: UserModel? = UserModel()
     
     @Injected private var getUserUseCase: GetUserCoreDataUseCase
+    @Injected private var deleteUserUseCase: DeleteUserCoreDataUseCase
     
     private var subscriptions = Set<AnyCancellable>()
     
@@ -29,8 +15,17 @@ final class ProfileTabViewModel: ObservableObject {
             .replaceError(with: nil)
             .sink(receiveCompletion: { _ in }) { [weak self] user in
                 guard let user = user else { return }
-                self?.user = UserSceneModel(model: user)
+                self?.user = user
             }
+            .store(in: &subscriptions)
+    }
+    
+    func logout() {
+        guard let user = self.user else { return }
+        let params = DeleteUserCoreDataUseCase.Params(user: user)
+        self.deleteUserUseCase.execute(with: params)
+            .replaceError(with: false)
+            .sink(receiveCompletion: { _ in }, receiveValue: { _ in })
             .store(in: &subscriptions)
     }
 }

@@ -1,6 +1,9 @@
 import SwiftUI
 
 struct ProfileTabView: View {
+    @EnvironmentObject
+    private var coordinator: TabCoordinator
+    
     @StateObject
     private var viewModel = ProfileTabViewModel()
     
@@ -15,9 +18,14 @@ struct ProfileTabView: View {
                         .padding(.bottom, 16)
                     Text("Name: \(user.name)")
                         .font(.title.bold())
-                    Text("Location: \(user.location)")
+                    Text("Location: \(user.location.title)")
                         .font(.title.bold())
                     Spacer()
+                    Button("Logout") {
+                        viewModel.logout()
+                        coordinator.logout()
+                    }
+                    .buttonStyle(DestructiveButtonStyle())
                 }
             }
         }

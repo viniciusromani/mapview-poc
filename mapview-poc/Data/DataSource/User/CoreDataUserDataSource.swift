@@ -9,7 +9,7 @@ class CoreDataUserDataSource: UserDataSource {
     
     func store(_ user: UserModel) -> Future<Bool, Error> {
         return Future { [weak self] in
-            self?.manager.save()
+            try self?.manager.save()
             return true
         }
     }
@@ -22,6 +22,15 @@ class CoreDataUserDataSource: UserDataSource {
             }
             let model = UserModel(managed: managed)
             return model
+        }
+    }
+    
+    func delete(_ user: UserModel) -> Future<Bool, Error> {
+        return Future { [weak self] in
+            let request = User.fetchRequest()
+            request.predicate = NSPredicate(format: "name = %@", user.name)
+            try self?.manager.delete(request)
+            return true
         }
     }
 }

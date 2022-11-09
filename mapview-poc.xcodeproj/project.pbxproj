@@ -10,6 +10,8 @@
 		A179B38E291A78CA001C8877 /* MapApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A179B38B291A78CA001C8877 /* MapApp.xcdatamodeld */; };
 		A179B3A1291A92F3001C8877 /* Location+Properties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A179B39D291A92F3001C8877 /* Location+Properties.swift */; };
 		A179B3A3291A92F3001C8877 /* User+Properties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A179B39F291A92F3001C8877 /* User+Properties.swift */; };
+		A179B3AA291BB2E2001C8877 /* DestructiveButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A179B3A9291BB2E2001C8877 /* DestructiveButtonStyle.swift */; };
+		A179B3AC291BDF11001C8877 /* DeleteUserCoreDataUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A179B3AB291BDF11001C8877 /* DeleteUserCoreDataUseCase.swift */; };
 		A1B264262917C9EF00E302CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1B264252917C9EF00E302CF /* Assets.xcassets */; };
 		A1B264292917C9EF00E302CF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1B264282917C9EF00E302CF /* Preview Assets.xcassets */; };
 		A1B264332917C9EF00E302CF /* mapview_pocTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B264322917C9EF00E302CF /* mapview_pocTests.swift */; };
@@ -79,6 +81,8 @@
 		A179B38D291A78CA001C8877 /* User.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = User.xcdatamodel; sourceTree = "<group>"; };
 		A179B39D291A92F3001C8877 /* Location+Properties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Location+Properties.swift"; sourceTree = "<group>"; };
 		A179B39F291A92F3001C8877 /* User+Properties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+Properties.swift"; sourceTree = "<group>"; };
+		A179B3A9291BB2E2001C8877 /* DestructiveButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestructiveButtonStyle.swift; sourceTree = "<group>"; };
+		A179B3AB291BDF11001C8877 /* DeleteUserCoreDataUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteUserCoreDataUseCase.swift; sourceTree = "<group>"; };
 		A1B2641E2917C9EB00E302CF /* mapview-poc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mapview-poc.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1B264252917C9EF00E302CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A1B264282917C9EF00E302CF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -272,6 +276,7 @@
 			children = (
 				A1B2647C2917EF4400E302CF /* RoundedTextFieldStyle.swift */,
 				A1B2647E2917F17300E302CF /* PrimaryButtonStyle.swift */,
+				A179B3A9291BB2E2001C8877 /* DestructiveButtonStyle.swift */,
 			);
 			path = Styles;
 			sourceTree = "<group>";
@@ -340,6 +345,7 @@
 				A1D0981329187176001FDA44 /* GetLocationsUseCase.swift */,
 				A1D09873291A7239001FDA44 /* StoreUserCoreDataUseCase.swift */,
 				A1D09875291A729E001FDA44 /* GetUserCoreDataUseCase.swift */,
+				A179B3AB291BDF11001C8877 /* DeleteUserCoreDataUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -551,6 +557,7 @@
 			files = (
 				A1D0981029186D0F001FDA44 /* LocalLocationDataSource.swift in Sources */,
 				A1D0982529189FC2001FDA44 /* Coordinator.swift in Sources */,
+				A179B3AA291BB2E2001C8877 /* DestructiveButtonStyle.swift in Sources */,
 				A1D098352918F87D001FDA44 /* MainTabView.swift in Sources */,
 				A1D0981F291890E6001FDA44 /* Data+Injector.swift in Sources */,
 				A1D0984729192C3D001FDA44 /* LocationRowView.swift in Sources */,
@@ -575,6 +582,7 @@
 				A1D09816291882D7001FDA44 /* Future+Extensions.swift in Sources */,
 				A1D098502919729E001FDA44 /* UserDataSource.swift in Sources */,
 				A1D0983A2918F96B001FDA44 /* ProfileTabViewModel.swift in Sources */,
+				A179B3AC291BDF11001C8877 /* DeleteUserCoreDataUseCase.swift in Sources */,
 				A1D0980D29186996001FDA44 /* LocationDataSource.swift in Sources */,
 				A1D098302918A573001FDA44 /* MapTabView.swift in Sources */,
 				A1B264532917D40800E302CF /* SignUpNameStepView.swift in Sources */,

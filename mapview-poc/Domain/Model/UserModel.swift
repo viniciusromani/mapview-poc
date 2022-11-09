@@ -4,6 +4,11 @@ struct UserModel {
     private(set) var name: String
     private(set) var location: LocationModel
     
+    init() {
+        self.name = ""
+        self.location = LocationModel()
+    }
+    
     init(name: String,
          location: LocationModel) {
         self.name = name

@@ -18,4 +18,12 @@ class TabCoordinator: Coordinator, ObservableObject {
         let hosting = UIHostingController(rootView: viewWithCoordinator)
         self.navigationController.pushViewController(hosting, animated: false)
     }
+    
+    func logout() {
+        guard let appCoordinator = self.parentCoordinator as? AppCoordinator else {
+            fatalError("Parent Coordinator must be AppCoordinator")
+        }
+        appCoordinator.childDidFinish(self)
+        appCoordinator.didLogOut()
+    }
 }

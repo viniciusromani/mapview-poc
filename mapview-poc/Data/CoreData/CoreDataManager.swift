@@ -30,14 +30,27 @@ class CoreDataManager: ObservableObject {
         }
     }
     
-    func save() {
-        if self.context.hasChanges {
+    func save() throws {
+        if context.hasChanges {
             do {
-                try self.context.save()
+                try context.save()
             } catch {
-                let err = error as NSError
-                fatalError("Unresolved error \(err.localizedDescription)")
+                throw error
             }
+        }
+    }
+    
+    func delete<T: NSManagedObject>(_ request: NSFetchRequest<T>) throws {
+        do {
+            let objects = try context.fetch(request)
+            guard let toDelete = objects.first else {
+                let error = NSError(domain: "", code: 0)
+                throw error
+            }
+            context.delete(toDelete)
+            try save()
+        } catch {
+            throw error
         }
     }
 }
