@@ -1,6 +1,6 @@
 import MapKit
 
-struct LocationModel {
+class LocationModel {
     private(set) var id = UUID()
     private(set) var title: String
     private(set) var latitude: Double
@@ -33,4 +33,14 @@ struct LocationModel {
     }
 }
 
-extension LocationModel: Identifiable { }
+extension LocationModel: Identifiable, Hashable {
+    static func == (lhs: LocationModel, rhs: LocationModel) -> Bool {
+        return lhs.title == rhs.title &&
+            lhs.latitude == rhs.latitude &&
+            lhs.longitude == rhs.longitude
+    }
+    
+    public func hash(into hasher: inout Hasher) {
+        return hasher.combine(self.id)
+    }
+}

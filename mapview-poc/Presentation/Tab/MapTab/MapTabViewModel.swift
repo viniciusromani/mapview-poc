@@ -3,16 +3,17 @@ import MapKit
 import SwiftUI
 
 final class MapTabViewModel: ObservableObject {
-    @Published var storedLocation: LocationModel = LocationModel()
+    @Published var storedLocation: LocationModel? = LocationModel()
     @Published var region: MKCoordinateRegion = MKCoordinateRegion()
     
     @Injected private var getUserUseCase: GetUserCoreDataUseCase
     
-    private(set) var subscriptions = Set<AnyCancellable>()
+    private var subscriptions = Set<AnyCancellable>()
     
     func getUserLocation() {
         self.getUserUseCase.execute()
             .receive(on: RunLoop.main)
+            .replaceError(with: nil)
             .sink(receiveCompletion: { _ in }) { [weak self] user in
                 guard let user = user else { return }
                 self?.storedLocation = user.location

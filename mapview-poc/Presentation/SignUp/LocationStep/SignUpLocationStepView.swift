@@ -1,17 +1,14 @@
 import SwiftUI
 
+/**
+ TODO: List row selection could be bindable
+ */
 struct SignUpLocationStepView: View {
     @EnvironmentObject
     private var coordinator: SignUpCoordinator
     
     @ObservedObject
     private var viewModel: SignUpLocationStepViewModel
-    
-    @State var selectedLocation: String? {
-        didSet {
-            print("acabou de setar", selectedLocation)
-        }
-    }
     
     init(viewModel: SignUpLocationStepViewModel) {
         self.viewModel = viewModel
@@ -27,23 +24,23 @@ struct SignUpLocationStepView: View {
                 .padding(.vertical, 16)
             if viewModel.state == .loaded {
                 List(viewModel.locationsFound,
-                     id: \.self,
-                     selection: $selectedLocation) { location in
+                     id: \.self) { location in
                     Section(header: Text("Locations Found")) {
-                        LocationRowView(title: location)
+                        LocationRowView(model: location)
                             .onTapGesture {
+                                self.viewModel.store(location)
                                 self.coordinator.didFinishSignUp()
                             }
                     }
-                }
+                }.environment(\.editMode, .constant(.active))
             }
             Button {
                 Task {
-                    await self.viewModel.search()
+                    await viewModel.search()
                 }
             } label: {
                 ZStack {
-                    let isLoading = self.viewModel.state.isLoading
+                    let isLoading = viewModel.state.isLoading
                     Text("Search")
                         .opacity(isLoading ? 0: 1)
                     
@@ -56,8 +53,17 @@ struct SignUpLocationStepView: View {
             .buttonStyle(PrimaryButtonStyle())
             .disabled(viewModel.canSubmit.negated)
         }
+        .ignoresSafeArea()
         .padding()
         .navigationBarTitle("MapApp")
+        .alert(isPresented: Binding(get: {
+            viewModel.state == .error
+        }, set: { _ in })) {
+            Alert(
+                title: Text("No results were found"),
+                message: Text("Check your internet connection and try again"),
+                dismissButton: .default(Text("Got it!")))
+        }
     }
 }
 

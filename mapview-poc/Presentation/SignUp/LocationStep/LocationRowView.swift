@@ -1,15 +1,14 @@
 import SwiftUI
 
+/**
+ TODO: SelectableRow could be an isolated component
+ */
 struct LocationRowView: View {
-    private let title: String
-    
-    init(title: String) {
-        self.title = title
-    }
+    private(set) var model: LocationModel
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text(self.title)
+            Text(self.model.title)
                 .lineLimit(2)
                 .font(.title2.bold())
                 .frame(maxWidth: .infinity, alignment: .leading)
@@ -21,6 +20,11 @@ struct LocationRowView: View {
 
 struct LocationRowView_Previews: PreviewProvider {
     static var previews: some View {
-        LocationRowView(title: "Piracicaba, SP Brazil")
+        LocationRowView(
+            model:
+                LocationModel(title: "Piracicaba - SP Brazil",
+                              latitude: 0,
+                              longitude: 0
+                             ))
     }
 }

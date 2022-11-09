@@ -1,6 +1,6 @@
 import CoreData
 
-class UserModel {
+struct UserModel {
     private(set) var name: String
     private(set) var location: LocationModel
     
