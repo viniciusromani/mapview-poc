@@ -1,14 +1,12 @@
 import Combine
 import MapKit
 
-/**
- TODO: Error treatment must be implemented
- */
 class CoreDataUserDataSource: UserDataSource {
     @Injected private var manager: CoreDataManager
     
     func store(_ user: UserModel) -> Future<Bool, Error> {
         return Future { [weak self] in
+            _ = User(model: user)
             try self?.manager.save()
             return true
         }
