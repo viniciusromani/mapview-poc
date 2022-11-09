@@ -21,9 +21,7 @@ struct MapTabView: View {
             }
         }
         .onAppear { viewModel.getUserLocation() }
-        .alert(isPresented: Binding(get: {
-            viewModel.storedLocation == nil
-        }, set: { _ in })) {
+        .alert(isPresented: Binding(viewModel.storedLocation == nil)) {
             Alert(
                 title: Text("No user was found"),
                 message: Text("Please reinstall the app and fill up the onboarding"),

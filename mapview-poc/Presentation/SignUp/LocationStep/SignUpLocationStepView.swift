@@ -56,12 +56,10 @@ struct SignUpLocationStepView: View {
         .ignoresSafeArea()
         .padding()
         .navigationBarTitle("MapApp")
-        .alert(isPresented: Binding(get: {
-            viewModel.state == .error
-        }, set: { _ in })) {
+        .alert(isPresented: Binding(viewModel.state == .error)) {
             Alert(
                 title: Text("No results were found"),
-                message: Text("Check your internet connection and try again"),
+                message: Text("Check typed city and your internet connection to try again"),
                 dismissButton: .default(Text("Got it!")))
         }
     }

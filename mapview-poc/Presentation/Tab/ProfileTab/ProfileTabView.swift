@@ -32,9 +32,7 @@ struct ProfileTabView: View {
         .frame(maxWidth: .infinity)
         .padding()
         .onAppear { self.viewModel.getUser() }
-        .alert(isPresented: Binding(get: {
-            viewModel.user == nil
-        }, set: { _ in })) {
+        .alert(isPresented: Binding(viewModel.user == nil)) {
             Alert(
                 title: Text("No user was found"),
                 message: Text("Please reinstall the app and fill up the onboarding"),

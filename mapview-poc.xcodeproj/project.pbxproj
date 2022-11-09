@@ -57,6 +57,7 @@
 		A1D0985A29197684001FDA44 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D0985929197684001FDA44 /* CoreDataManager.swift */; };
 		A1D09874291A7239001FDA44 /* StoreUserCoreDataUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D09873291A7239001FDA44 /* StoreUserCoreDataUseCase.swift */; };
 		A1D09876291A729E001FDA44 /* GetUserCoreDataUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D09875291A729E001FDA44 /* GetUserCoreDataUseCase.swift */; };
+		A1E7CAC8291C0D3F00347E05 /* Binding+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E7CAC7291C0D3F00347E05 /* Binding+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,6 +131,7 @@
 		A1D0985929197684001FDA44 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		A1D09873291A7239001FDA44 /* StoreUserCoreDataUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreUserCoreDataUseCase.swift; sourceTree = "<group>"; };
 		A1D09875291A729E001FDA44 /* GetUserCoreDataUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserCoreDataUseCase.swift; sourceTree = "<group>"; };
+		A1E7CAC7291C0D3F00347E05 /* Binding+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -287,6 +289,7 @@
 				A1B264832917FB4400E302CF /* Bool+Extensions.swift */,
 				A1D09815291882D6001FDA44 /* Future+Extensions.swift */,
 				A1D0984429191540001FDA44 /* Array+Extensions.swift */,
+				A1E7CAC7291C0D3F00347E05 /* Binding+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -561,6 +564,7 @@
 				A1D098352918F87D001FDA44 /* MainTabView.swift in Sources */,
 				A1D0981F291890E6001FDA44 /* Data+Injector.swift in Sources */,
 				A1D0984729192C3D001FDA44 /* LocationRowView.swift in Sources */,
+				A1E7CAC8291C0D3F00347E05 /* Binding+Extensions.swift in Sources */,
 				A1B264892917FEC400E302CF /* SignUpLocationStepViewModel.swift in Sources */,
 				A1B264822917FAE100E302CF /* String+Extensions.swift in Sources */,
 				A179B3A3291A92F3001C8877 /* User+Properties.swift in Sources */,
