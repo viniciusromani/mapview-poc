@@ -58,6 +58,7 @@
 		A1D09874291A7239001FDA44 /* StoreUserCoreDataUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D09873291A7239001FDA44 /* StoreUserCoreDataUseCase.swift */; };
 		A1D09876291A729E001FDA44 /* GetUserCoreDataUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D09875291A729E001FDA44 /* GetUserCoreDataUseCase.swift */; };
 		A1E7CAC8291C0D3F00347E05 /* Binding+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E7CAC7291C0D3F00347E05 /* Binding+Extensions.swift */; };
+		A1E7CACA291C41F100347E05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1E7CAC9291C41F100347E05 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,7 +84,7 @@
 		A179B3A9291BB2E2001C8877 /* DestructiveButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestructiveButtonStyle.swift; sourceTree = "<group>"; };
 		A179B3AB291BDF11001C8877 /* DeleteUserCoreDataUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteUserCoreDataUseCase.swift; sourceTree = "<group>"; };
 		A179B3AE291BE204001C8877 /* MapApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MapApp.xcdatamodel; sourceTree = "<group>"; };
-		A1B2641E2917C9EB00E302CF /* mapview-poc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mapview-poc.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1B2641E2917C9EB00E302CF /* Map App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Map App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1B264252917C9EF00E302CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A1B264282917C9EF00E302CF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A1B2642E2917C9EF00E302CF /* mapview-pocTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "mapview-pocTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,6 +133,7 @@
 		A1D09873291A7239001FDA44 /* StoreUserCoreDataUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreUserCoreDataUseCase.swift; sourceTree = "<group>"; };
 		A1D09875291A729E001FDA44 /* GetUserCoreDataUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserCoreDataUseCase.swift; sourceTree = "<group>"; };
 		A1E7CAC7291C0D3F00347E05 /* Binding+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding+Extensions.swift"; sourceTree = "<group>"; };
+		A1E7CAC9291C41F100347E05 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,7 +184,7 @@
 		A1B2641F2917C9EB00E302CF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A1B2641E2917C9EB00E302CF /* mapview-poc.app */,
+				A1B2641E2917C9EB00E302CF /* Map App.app */,
 				A1B2642E2917C9EF00E302CF /* mapview-pocTests.xctest */,
 				A1B264382917C9EF00E302CF /* mapview-pocUITests.xctest */,
 			);
@@ -203,6 +205,7 @@
 				A1B264692917E3D900E302CF /* AppDelegate.swift */,
 				A1B2646B2917E3E700E302CF /* SceneDelegate.swift */,
 				A179B3AD291BE204001C8877 /* MapApp.xcdatamodeld */,
+				A1E7CAC9291C41F100347E05 /* LaunchScreen.storyboard */,
 			);
 			path = "mapview-poc";
 			sourceTree = "<group>";
@@ -444,7 +447,7 @@
 			);
 			name = "mapview-poc";
 			productName = "mapview-poc";
-			productReference = A1B2641E2917C9EB00E302CF /* mapview-poc.app */;
+			productReference = A1B2641E2917C9EB00E302CF /* Map App.app */;
 			productType = "com.apple.product-type.application";
 		};
 		A1B2642D2917C9EF00E302CF /* mapview-pocTests */ = {
@@ -531,6 +534,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1E7CACA291C41F100347E05 /* LaunchScreen.storyboard in Resources */,
 				A1B264292917C9EF00E302CF /* Preview Assets.xcassets in Resources */,
 				A1B264262917C9EF00E302CF /* Assets.xcassets in Resources */,
 			);
@@ -766,6 +770,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -774,7 +779,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "personal.mapview-poc";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Map App";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -794,6 +799,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -802,7 +808,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "personal.mapview-poc";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Map App";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
