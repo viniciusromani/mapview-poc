@@ -5,28 +5,26 @@ struct ProfileTabView: View {
     private var coordinator: TabCoordinator
     
     @StateObject
-    private var viewModel = ProfileTabViewModel()
+    var viewModel = ProfileTabViewModel()
     
     var body: some View {
         VStack {
-            if let user = viewModel.user {
-                VStack(alignment: .leading, spacing: 8) {
-                    Text("YOUR PROFILE")
-                        .font(.caption.bold())
-                        .foregroundColor(.gray)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding(.bottom, 16)
-                    Text("Name: \(user.name)")
-                        .font(.title.bold())
-                    Text("Location: \(user.location.title)")
-                        .font(.title.bold())
-                    Spacer()
-                    Button("Logout") {
-                        viewModel.logout()
-                        coordinator.logout()
-                    }
-                    .buttonStyle(DestructiveButtonStyle())
+            VStack(alignment: .leading, spacing: 8) {
+                Text("YOUR PROFILE")
+                    .font(.caption.bold())
+                    .foregroundColor(.gray)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.bottom, 16)
+                Text("Name: \(viewModel.user?.name ?? "-")")
+                    .font(.title.bold())
+                Text("Location: \(viewModel.user?.location.title ?? "-")")
+                    .font(.title.bold())
+                Spacer()
+                Button("Logout") {
+                    viewModel.logout()
+                    coordinator.logout()
                 }
+                .buttonStyle(DestructiveButtonStyle())
             }
         }
         .frame(maxWidth: .infinity)
@@ -42,7 +40,36 @@ struct ProfileTabView: View {
 }
 
 struct ProfileTabView_Previews: PreviewProvider {
+    static let filled: ProfileTabViewModel = {
+        let _filled = ProfileTabViewModel()
+        let location = LocationModel(
+            title: "Piracicaba - SP, Brazil",
+            latitude: -22.7292941,
+            longitude: -47.6496458
+        )
+        _filled.user = UserModel(
+            name: "Vinicius",
+            location: location
+        )
+        return _filled
+    }()
+    static let noUser: ProfileTabViewModel = {
+        let _noUser = ProfileTabViewModel()
+        _noUser.user = nil
+        return _noUser
+    }()
+    
     static var previews: some View {
+        let _ = DataInjector()
+        let _ = DomainInjector()
+        
         ProfileTabView()
+            .previewDisplayName("Empty")
+        
+        ProfileTabView(viewModel: filled)
+            .previewDisplayName("Filled")
+        
+        ProfileTabView(viewModel: noUser)
+            .previewDisplayName("No User")
     }
 }

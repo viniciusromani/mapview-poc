@@ -2,7 +2,7 @@ import SwiftUI
 
 struct MainTabView: View {
     @StateObject
-    private var viewModel = MainTabViewModel()
+    var viewModel = MainTabViewModel()
     
     var body: some View {
         TabView(selection: $viewModel.selected) {

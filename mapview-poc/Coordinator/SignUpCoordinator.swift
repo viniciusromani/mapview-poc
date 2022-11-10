@@ -13,8 +13,7 @@ class SignUpCoordinator: Coordinator, ObservableObject {
     }
     
     func start() {
-        let viewModel = SignUpNameStepViewModel()
-        let view = SignUpNameStepView(viewModel: viewModel)
+        let view = SignUpNameStepView()
         let viewWithCoordinator = view.environmentObject(self)
         let hosting = UIHostingController(rootView: viewWithCoordinator)
         self.navigationController.pushViewController(hosting, animated: false)

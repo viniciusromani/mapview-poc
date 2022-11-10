@@ -26,5 +26,6 @@ struct LocationRowView_Previews: PreviewProvider {
                               latitude: 0,
                               longitude: 0
                              ))
+        .background(Color.gray.opacity(0.3)) // This is only to check padding
     }
 }

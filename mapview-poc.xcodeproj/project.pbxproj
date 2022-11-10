@@ -12,6 +12,7 @@
 		A179B3AA291BB2E2001C8877 /* DestructiveButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A179B3A9291BB2E2001C8877 /* DestructiveButtonStyle.swift */; };
 		A179B3AC291BDF11001C8877 /* DeleteUserCoreDataUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A179B3AB291BDF11001C8877 /* DeleteUserCoreDataUseCase.swift */; };
 		A179B3AF291BE204001C8877 /* MapApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A179B3AD291BE204001C8877 /* MapApp.xcdatamodeld */; };
+		A1B0A8A5291C8788005D93FB /* SignUpLocationStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B0A8A4291C8788005D93FB /* SignUpLocationStepView.swift */; };
 		A1B264262917C9EF00E302CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1B264252917C9EF00E302CF /* Assets.xcassets */; };
 		A1B264292917C9EF00E302CF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1B264282917C9EF00E302CF /* Preview Assets.xcassets */; };
 		A1B264332917C9EF00E302CF /* mapview_pocTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B264322917C9EF00E302CF /* mapview_pocTests.swift */; };
@@ -25,7 +26,6 @@
 		A1B2647F2917F17300E302CF /* PrimaryButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2647E2917F17300E302CF /* PrimaryButtonStyle.swift */; };
 		A1B264822917FAE100E302CF /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B264812917FAE100E302CF /* String+Extensions.swift */; };
 		A1B264842917FB4400E302CF /* Bool+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B264832917FB4400E302CF /* Bool+Extensions.swift */; };
-		A1B264872917FE2900E302CF /* SignUpLocationStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B264862917FE2900E302CF /* SignUpLocationStepView.swift */; };
 		A1B264892917FEC400E302CF /* SignUpLocationStepViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B264882917FEC400E302CF /* SignUpLocationStepViewModel.swift */; };
 		A1D0980D29186996001FDA44 /* LocationDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D0980C29186996001FDA44 /* LocationDataSource.swift */; };
 		A1D0981029186D0F001FDA44 /* LocalLocationDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D0980F29186D0F001FDA44 /* LocalLocationDataSource.swift */; };
@@ -88,6 +88,7 @@
 		A179B3A9291BB2E2001C8877 /* DestructiveButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestructiveButtonStyle.swift; sourceTree = "<group>"; };
 		A179B3AB291BDF11001C8877 /* DeleteUserCoreDataUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteUserCoreDataUseCase.swift; sourceTree = "<group>"; };
 		A179B3AE291BE204001C8877 /* MapApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MapApp.xcdatamodel; sourceTree = "<group>"; };
+		A1B0A8A4291C8788005D93FB /* SignUpLocationStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpLocationStepView.swift; sourceTree = "<group>"; };
 		A1B2641E2917C9EB00E302CF /* Map App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Map App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1B264252917C9EF00E302CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A1B264282917C9EF00E302CF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -104,7 +105,6 @@
 		A1B2647E2917F17300E302CF /* PrimaryButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButtonStyle.swift; sourceTree = "<group>"; };
 		A1B264812917FAE100E302CF /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		A1B264832917FB4400E302CF /* Bool+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bool+Extensions.swift"; sourceTree = "<group>"; };
-		A1B264862917FE2900E302CF /* SignUpLocationStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpLocationStepView.swift; sourceTree = "<group>"; };
 		A1B264882917FEC400E302CF /* SignUpLocationStepViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpLocationStepViewModel.swift; sourceTree = "<group>"; };
 		A1D0980C29186996001FDA44 /* LocationDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDataSource.swift; sourceTree = "<group>"; };
 		A1D0980F29186D0F001FDA44 /* LocalLocationDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalLocationDataSource.swift; sourceTree = "<group>"; };
@@ -311,7 +311,7 @@
 		A1B264852917FE1000E302CF /* LocationStep */ = {
 			isa = PBXGroup;
 			children = (
-				A1B264862917FE2900E302CF /* SignUpLocationStepView.swift */,
+				A1B0A8A4291C8788005D93FB /* SignUpLocationStepView.swift */,
 				A1B264882917FEC400E302CF /* SignUpLocationStepViewModel.swift */,
 				A1D0984629192C3D001FDA44 /* LocationRowView.swift */,
 			);
@@ -602,7 +602,6 @@
 				A1E7CACC291C449100347E05 /* SplashCoordinator.swift in Sources */,
 				A1B2646C2917E3E700E302CF /* SceneDelegate.swift in Sources */,
 				A1B2646A2917E3D900E302CF /* AppDelegate.swift in Sources */,
-				A1B264872917FE2900E302CF /* SignUpLocationStepView.swift in Sources */,
 				A1D0982B2918A473001FDA44 /* TabCoordinator.swift in Sources */,
 				A1D09876291A729E001FDA44 /* GetUserCoreDataUseCase.swift in Sources */,
 				A1D098572919764F001FDA44 /* CoreDataUserDataSource.swift in Sources */,
@@ -619,6 +618,7 @@
 				A1D0981D29188FA0001FDA44 /* DependencyInjector.swift in Sources */,
 				A1D09841291903FB001FDA44 /* MainTabViewModel.swift in Sources */,
 				A1B264552917D42000E302CF /* SignUpNameStepViewModel.swift in Sources */,
+				A1B0A8A5291C8788005D93FB /* SignUpLocationStepView.swift in Sources */,
 				A1D0984529191540001FDA44 /* Array+Extensions.swift in Sources */,
 				A1D09823291894B0001FDA44 /* Presentation+Injector.swift in Sources */,
 				A1D0981429187176001FDA44 /* GetLocationsUseCase.swift in Sources */,

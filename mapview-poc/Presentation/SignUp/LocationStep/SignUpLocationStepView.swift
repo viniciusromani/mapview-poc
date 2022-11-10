@@ -8,7 +8,7 @@ struct SignUpLocationStepView: View {
     private var coordinator: SignUpCoordinator
     
     @ObservedObject
-    private var viewModel: SignUpLocationStepViewModel
+    var viewModel = SignUpLocationStepViewModel(name: "")
     
     init(viewModel: SignUpLocationStepViewModel) {
         self.viewModel = viewModel
@@ -66,18 +66,47 @@ struct SignUpLocationStepView: View {
 }
 
 struct SignUpLocationStepView_Previews: PreviewProvider {
+    static let empty = SignUpLocationStepViewModel(name: "Vinicius")
+    static let typed = SignUpLocationStepViewModel(
+        name: "Vinicius",
+        typedLocation: "Piracicaba"
+    )
+    static let loaded: SignUpLocationStepViewModel = {
+        let _loaded = SignUpLocationStepViewModel(
+            name: "Vinicius",
+            typedLocation: "Piracicaba"
+        )
+        _loaded.state = .loaded
+        _loaded.locationsFound = [
+            LocationModel(title: "Piracicaba - SP, Brazil",
+                          latitude: -22.7292941,
+                          longitude: -47.6496458)]
+        return _loaded
+    }()
+    static let error: SignUpLocationStepViewModel = {
+        let _loaded = SignUpLocationStepViewModel(
+            name: "Vinicius",
+            typedLocation: "Piracicaba"
+        )
+        _loaded.state = .error
+        _loaded.locationsFound = []
+        return _loaded
+    }()
+    
     static var previews: some View {
-        SignUpLocationStepView(
-            viewModel: SignUpLocationStepViewModel(
-                name: "Vinicius Romani"
-            )
-        ).previewDisplayName("Empty")
+        let _ = DataInjector()
+        let _ = DomainInjector()
         
-        SignUpLocationStepView(
-            viewModel: SignUpLocationStepViewModel(
-                name: "Vinicius Romani",
-                typedLocation: "Piracicaba, SP"
-            )
-        ).previewDisplayName("Filled")
+        SignUpLocationStepView(viewModel: empty)
+            .previewDisplayName("Empty")
+        
+        SignUpLocationStepView(viewModel: typed)
+            .previewDisplayName("Typed")
+        
+        SignUpLocationStepView(viewModel: loaded)
+            .previewDisplayName("Found")
+        
+        SignUpLocationStepView(viewModel: error)
+            .previewDisplayName("Error")
     }
 }

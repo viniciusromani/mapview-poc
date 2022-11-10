@@ -4,12 +4,8 @@ struct SignUpNameStepView: View {
     @EnvironmentObject
     private var coordinator: SignUpCoordinator
     
-    @ObservedObject
-    private var viewModel: SignUpNameStepViewModel
-    
-    init(viewModel: SignUpNameStepViewModel) {
-        self.viewModel = viewModel
-    }
+    @StateObject
+    var viewModel = SignUpNameStepViewModel()
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -33,12 +29,10 @@ struct SignUpNameStepView: View {
 
 struct SignUpNameStepView_Previews: PreviewProvider {
     static var previews: some View {
-        SignUpNameStepView(
-            viewModel: SignUpNameStepViewModel()
-        ).previewDisplayName("Empty")
+        SignUpNameStepView()
+            .previewDisplayName("Empty")
         
-        SignUpNameStepView(
-            viewModel: SignUpNameStepViewModel(name: "Vinicius Romani")
-        ).previewDisplayName("Filled")
+        SignUpNameStepView(viewModel: SignUpNameStepViewModel(name: "Vinicius"))
+            .previewDisplayName("Filled")
     }
 }
